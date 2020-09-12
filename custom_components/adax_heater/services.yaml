@@ -1,0 +1,9 @@
+set_room_temperature:
+  description: Set Adax room temperatures.
+  fields:
+    room_name:
+      description: Name of room to change.
+      example: "kitchen"
+    room_temp:
+      description: Room temp.
+      example: 21
