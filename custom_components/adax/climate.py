@@ -62,7 +62,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
     response = requests.post(ACCESS_TOKEN_URL, data=data)
 
     if response.status_code != 200:
-        _LOGGER.info("Adax_heater: Failed to login to retrieve token: %d", response.status_code)
+        _LOGGER.info("Adax: Failed to login to retrieve token: %d", response.status_code)
         raise ConfigEntryNotReady
     res = response.json()
     token = res['access_token']
@@ -205,7 +205,7 @@ class AdaxHeater(ClimateEntity):
         response = requests.post(ACCESS_TOKEN_URL, data=data)
 
         if response.status_code != 200:
-            _LOGGER.info("Adax_heater: Failed to update information: %d", response.status_code)
+            _LOGGER.info("Adax: Failed to set new temperature: %d", response.status_code)
             return False
         res = response.json()
         token = res['access_token']
@@ -226,7 +226,7 @@ class AdaxHeater(ClimateEntity):
         response = requests.post(ACCESS_TOKEN_URL, data=data)
 
         if response.status_code != 200:
-            _LOGGER.info("Adax_heater: Failed to update information: %d", response.status_code)
+            _LOGGER.info("Adax: Failed to update hvac_mode: %d", response.status_code)
             return False
         res = response.json()
         token = res['access_token']
@@ -254,7 +254,7 @@ class AdaxHeater(ClimateEntity):
         response = requests.post(ACCESS_TOKEN_URL, data=data)
 
         if response.status_code != 200:
-            _LOGGER.info("Adax_heater: Failed to update information: %d", response.status_code)
+            _LOGGER.info("Adax: Failed to update information: %d", response.status_code)
             return False
         res = response.json()
         token = res['access_token']

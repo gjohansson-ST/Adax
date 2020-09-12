@@ -1,0 +1,10 @@
+{
+  "domain": "adax",
+  "name": "Adax",
+  "documentation": "https://github.com/gjohansson-ST/Adax",
+  "issue_tracker": "https://github.com/gjohansson-ST/Adax/issues",
+  "dependencies": [],
+  "codeowners": ["@gjohansson-ST"],
+  "requirements": []
+  "config_flow": true
+}

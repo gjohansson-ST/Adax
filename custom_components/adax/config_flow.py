@@ -45,13 +45,13 @@ class AdaxConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         response = requests.post(ACCESS_TOKEN_URL, data=data)
         errors = {}
         if response.status_code != 200:
-            _LOGGER.info("Adax_heater: Failed to login to retrieve token: %d", response.status_code)
+            _LOGGER.info("Adax: Failed to login to retrieve token: %d", response.status_code)
             errors["connection_error"] = "connection_error"
             return self.async_show_form(
                 step_id="user", data_schema=DATA_SCHEMA, errors=errors,
             )
 
-        _LOGGER.debug("Adax_heater: Login succesful. Config entry created.")
+        _LOGGER.debug("Adax: Login succesful. Config entry created.")
 
         unique_id = username
 
