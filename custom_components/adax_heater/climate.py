@@ -354,3 +354,11 @@ class AdaxHeater(ClimateEntity):
             "model": MODEL,
         }
         return device_info
+
+    @property
+    def icon(self):
+        """Return nice icon for heater"""
+        if self.hvac_mode == HVAC_MODE_HEAT:
+            return "mdi:radiator"
+        else:
+            return "mdi:radiator-off"
