@@ -40,7 +40,7 @@ Option1:
 Use [HACS](https://hacs.xyz/) to install
 
 Option2:
-Create a new folder under `custom_components` called `adax`. Upload the `***.py`-files in `custom_components/adax` to the newly created folder.
+Create a new folder under `custom_components` called `adax`. Upload the `***.py`-files in `custom_components/adax_heater` to the newly created folder.
 
 In both Options you need to restart your Home Assistant to pick up the new integration before proceeding.
 
@@ -59,5 +59,5 @@ Add debug logging
 ```python
  logger:
    logs:
-     custom_components.adax: debug
+     custom_components.adax_heater: debug
 ```

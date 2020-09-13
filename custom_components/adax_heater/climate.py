@@ -25,7 +25,7 @@ from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
-import custom_components.adax as adax
+import custom_components.adax_heater as adax_heater
 
 from .const import (
     ATTR_ROOM_TEMP,
@@ -83,7 +83,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
                 return False
             res = await response.json()
 
-    adax_hub = hass.data[adax.DATA_ADAX]
+    adax_hub = hass.data[adax_heater.DATA_ADAX]
 
     dev = []
     for heater in res['rooms']:
