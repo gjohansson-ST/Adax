@@ -5,6 +5,6 @@
   "issue_tracker": "https://github.com/gjohansson-ST/Adax/issues",
   "dependencies": [],
   "codeowners": ["@gjohansson-ST"],
-  "requirements": []
+  "requirements": [],
   "config_flow": true
 }

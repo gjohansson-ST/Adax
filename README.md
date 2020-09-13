@@ -1,49 +1,63 @@
+[![Adax heaters](https://github.com/gjohansson-ST/adax/blob/master/logo/logo.svg)](https://adax.no/)
+
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge&cacheSeconds=3600)](https://github.com/custom-components/hacs)
+[![size_badge](https://img.shields.io/github/repo-size/gjohansson-ST/adax?style=for-the-badge&cacheSeconds=3600)](https://github.com/gjohansson-ST/adax)
+[![version_badge](https://img.shields.io/github/v/release/gjohansson-ST/adax?label=Latest%20release&style=for-the-badge&cacheSeconds=3600)](https://github.com/gjohansson-ST/adax)
+
+
 # Adax_heater
 
-# First test
+---
+**Title:** "Adax heaters"
 
-Modified from kayjei / adax_wifi
-- Removed control, kept only read-only sensors
+**Description:** "Support for Adax heaters integration with Homeassistant."
 
-This integration does not use your account credentials. To be able to use it, the following paramters need to be extracted from the API calls.
-The integration has been tested with 1 home and 1 zone only. To use multiple zones, use my dev-branch.
+**Date created:** 2020-09-13
 
-Guide:
-1. Configure an SSL-proxy. In this example mitmproxy has been used in a docker container, but other installation may work as well. Mitmproxy listen on port 8080 for traffic and port 8081 for web-gui. https://medium.com/testvagrant/intercept-ios-android-network-calls-using-mitmproxy-4d3c94831f62
-2. Configure your phone to use the proxy (covered in the same guide)
-3. On your phone, open your Adax wifi app. Make sure you can see traffic in the mitmproxy gui
-4. To be able to use the integration, you must extract from the API calls:
-- ```account_id```: Passed in the URL in every call, i.e. zone list https://heater.azurewebsites.net/sheater-client-api/rest/zones/list/{account_id} Can also be found in your Adax app, under Account
-- ```device_signature```: Signature passed as parameter with URL: https://heater.azurewebsites.net/sheater-client-api/rest/zones/list/{account_id}
-You also need to extract the following values, from any call (fixed values in all calls):
-- ```appVersion```
-- ```device```
-- ```os```
-- ```timeOffset```
-- ```timeZone```
-5. Update the parameter section in the files
-- parameters.py
-	- ```account_id```
-	- ```appVersion```
-	- ```device```
-	- ```os```
-	- ```timeOffset```
-	- ```timeZone```
-	- ```device_signature``` (signature from zone URL)
-6. Put the folder adax_wifi/ in $CONFIG/custom_components/
-7. Add parameters in your configuration.yaml
-```python
- sensor:
-   - platform: Adax_heater
+**Last update:** 2020-09-13
+
+---
+
+Integrates with Adax heaters in your home.
+Current support by API is on/off, read temperatures and set temperatures.
+As per Adax design all settings are per room (as configured in the Adax phone app) and not per device.
+
+#
+
+This integration does not use account credentials. Read below instructions to enable service access to API
+
+## Retrieve username & password
+
+1. Logon to your Adax app on your phone
+2. Username is the "Account ID" which is listed in the bottom part of the Account section
+3. In same section below "THIRD PARTY INTEGRATIONS" Press "Remote user client API"
+4. Press "Add credentials"
+5. Give the service a name and copy the Password, this will be used as "Password" in this integration
+
+## Installation
+
+Option1:
+Use [HACS](https://hacs.xyz/) to install
+
+Option2:
+Create a new folder under `custom_components` called `adax`. Upload the `***.py`-files in `custom_components/adax` to the newly created folder.
+
+In both Options you need to restart your Home Assistant to pick up the new integration before proceeding.
+
+## Activate integration in HA
+
+1. Go to Integrations in your installation
+2. Click "+" for new integration and find Adax
+3. Configure the new integration with your "username" & "password" as you have them per instructions above.
+
+### Issues
+
+Turn on debug logging as per instructions below and report new issue on Github.
+
 ```
-```python
- climate:
-   - platform: Adax_heater
-```
-8. Add debug logging
+Add debug logging
 ```python
  logger:
    logs:
-     custom_components.Adax_heater: debug
+     custom_components.adax: debug
 ```
-9. Restart Home Assistant

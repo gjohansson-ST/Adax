@@ -1,1 +1,0 @@
-"""The Adax sensor integration."""
