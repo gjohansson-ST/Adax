@@ -5,7 +5,7 @@
 [![version_badge](https://img.shields.io/github/v/release/gjohansson-ST/adax?label=Latest%20release&style=for-the-badge&cacheSeconds=3600)](https://github.com/gjohansson-ST/adax)
 
 
-# Adax_heater
+# Adax heater
 
 ---
 **Title:** "Adax heaters"
