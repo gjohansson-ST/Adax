@@ -1,8 +1,8 @@
-[![Adax heaters](https://github.com/gjohansson-ST/adax/blob/master/logo/logo.svg)](https://adax.no/)
+[![Adax heaters](https://github.com/gjohansson-ST/adax_heater/blob/master/logo/logo.svg)](https://adax.no/)
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge&cacheSeconds=3600)](https://github.com/custom-components/hacs)
-[![size_badge](https://img.shields.io/github/repo-size/gjohansson-ST/adax?style=for-the-badge&cacheSeconds=3600)](https://github.com/gjohansson-ST/adax)
-[![version_badge](https://img.shields.io/github/v/release/gjohansson-ST/adax?label=Latest%20release&style=for-the-badge&cacheSeconds=3600)](https://github.com/gjohansson-ST/adax)
+[![size_badge](https://img.shields.io/github/repo-size/gjohansson-ST/adax_heater?style=for-the-badge&cacheSeconds=3600)](https://github.com/gjohansson-ST/adax_heater)
+[![version_badge](https://img.shields.io/github/v/release/gjohansson-ST/adax_heater?label=Latest%20release&style=for-the-badge&cacheSeconds=3600)](https://github.com/gjohansson-ST/adax_heater)
 
 
 # Adax heater
