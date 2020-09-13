@@ -1,0 +1,6 @@
+{
+  "name": "Adax heaters",
+  "render_readme": true,
+  "domains": ["climate"],
+  "iot_class": "Cloud Polling"
+}
